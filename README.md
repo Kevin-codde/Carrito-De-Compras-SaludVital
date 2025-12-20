@@ -1,20 +1,22 @@
 # Carrito-De-Compras-SaludVital
 Carrito de compras para una farmacia  "SaludVital".
 
-mi-carrito-app/
-├── index.html              # Tu punto de entrada HTML
-├── package.json            # Dependencias de npm
-├── public/                 # Archivos estáticos que no cambian (ej. favicon)
-│   └── vite.svg
-└── src/                    # Todo tu código de JavaScript y estilos
-    ├── main.js             # "Director de Orquesta" (Une todo)
-    ├── style.css           # Estilos globales
-    ├── data/               # Datos estáticos
-    │   └── productos.js    # El array de objetos de tus productos
-    ├── services/           # Conexiones externas o del navegador
-    │   └── storage.js      # Lógica de LocalStorage (getItem/setItem)
-    ├── logic/              # La "inteligencia" de tu app
-    │   └── cart.js         # Funciones de agregar, eliminar, calcular total
-    └── ui/                 # Manipulación del DOM
-        └── dom.js          # Funciones para pintar (renderizar) en el HTML
+## 📂 Estructura del Proyecto
 
+```text
+Carrito-Compras-SaludVital/
+├── index.html              # Punto de entrada principal (HTML5)
+├── package.json            # Configuración de Node y dependencias de Vite
+├── public/                 # Recursos estáticos (imágenes, iconos)
+│   └── vite.svg
+└── src/                    # Código fuente de la aplicación
+    ├── main.js             # Punto de entrada JS (conecta lógica y UI)
+    ├── style.css           # Estilos generales del proyecto
+    ├── data/               # Origen de los datos
+    │   └── productos.js    # Listado de productos (Base de datos local)
+    ├── services/           # Servicios del navegador
+    │   └── storage.js      # Persistencia de datos (LocalStorage)
+    ├── logic/              # Lógica de negocio
+    │   └── cart.js         # Operaciones del carrito (sumar, restar, borrar)
+    └── ui/                 # Componentes de interfaz
+        └── dom.js          # Manipulación del DOM y renderizado
