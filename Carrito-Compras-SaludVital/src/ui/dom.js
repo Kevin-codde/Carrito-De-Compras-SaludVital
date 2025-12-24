@@ -1,4 +1,7 @@
-
+/**
+ * Este script contiene la UI de la pagina principal
+ * Solo se maneja el HTML en este punto.
+ */
 
 const renderizar = (productos)=>{
     var ui = '';
@@ -24,7 +27,7 @@ const renderizar = (productos)=>{
     
     document.querySelector('#app').innerHTML = `
     <nav>
-        <img src="public/logoSalud.png" class="logo" ></img>
+        <img src="logoSalud.png" class="logo" ></img>
         
         <h4>Carrito</h4>
         <h4>Login</h4>
