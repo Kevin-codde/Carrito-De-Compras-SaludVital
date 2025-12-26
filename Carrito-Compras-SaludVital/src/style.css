@@ -216,3 +216,45 @@ footer {
   width : 150px;
   border-radius: 20px;
 }
+
+/* Sidebar carrito oculto */
+.content-carrito {
+  position: fixed;
+  top: 0;
+  right: -320px; /* Oculto fuera de pantalla */
+  width: 300px;
+  height: 100%;
+  background-color: #27ae60;
+  border-left: ridge;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+  transition: right 0.4s ease;
+  z-index: 1000;
+  padding: 20px;
+  color: white;
+  overflow-y: auto;
+}
+
+/* Cuando está activo (visible) */
+.content-carrito.active {
+  right: 0;
+}
+
+/* Botón flotante para abrir/cerrar */
+.toggle-carrito {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #2ecc71;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 1001;
+}
+
+.toggle-carrito:hover {
+  background: #27ae60;
+}

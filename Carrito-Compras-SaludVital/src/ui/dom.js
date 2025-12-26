@@ -34,6 +34,13 @@ const renderizar = (productos)=>{
     </nav>
     <div class="content-catalogo"> ${ui} </div>
 
+        <button class="toggle-carrito">🛒 Carrito</button>
+
+        <div class="content-carrito" id="carrito">
+        <h2>Mi Carrito</h2>
+        <p>No hay productos aún.</p>
+        </div>
+
      <footer>
         <div class="footer-content">
             <div class="footer-section contacto">
@@ -56,7 +63,9 @@ const renderizar = (productos)=>{
         </footer>
 
     `
-
+    const toggleBtn = document.querySelector('.toggle-carrito'); 
+    const carrito = document.getElementById('carrito'); 
+    toggleBtn.addEventListener('click', () => { carrito.classList.toggle('active'); });
 }
 
 export default renderizar;
