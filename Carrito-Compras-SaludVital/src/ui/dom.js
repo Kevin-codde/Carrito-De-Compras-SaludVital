@@ -2,9 +2,22 @@
  * Este script contiene la UI de la pagina principal
  * Solo se maneja el HTML en este punto.
  */
+import productos from  '../data/productos.json';
+import { getCart } from "../services/storage";
 
-const renderizar = (productos)=>{
-    var ui = '';
+var listado_Carrito = getCart();
+
+ var ui = '';
+ var uiCar = '';
+
+function renderCart(){
+    listado_Carrito.map(pc=>{
+        uiCar += `<li>${productos[pc-1].nombre}</li>`;
+    })
+    return uiCar;
+}
+const renderizar = ()=>{
+   
     productos.map(p=>{
         ui += `  
                     
@@ -24,6 +37,8 @@ const renderizar = (productos)=>{
         `
         
     })
+
+   
     
     document.querySelector('#app').innerHTML = `
     <nav>
@@ -33,6 +48,25 @@ const renderizar = (productos)=>{
         <h4>Login</h4>
     </nav>
     <div class="content-catalogo"> ${ui} </div>
+
+    <!-- Botón para abrir/cerrar el carrito -->
+<button id="toggleCart">🛒 Carrito</button>
+ 
+<!-- Barra lateral del carrito -->
+<div id="cartSidebar" class="cart-sidebar">
+  <div class="cart-header">
+    <h2>Carrito de Compras</h2>
+    <button id="closeCart">✖</button>
+  </div>
+
+  <div class="Productos-Carrito">
+    <ul>${renderCart()}</ul>
+  </div>
+   <button class="boton-Quitar">Quitar Producto(s)</button>
+
+
+</div>
+
 
      <footer>
         <div class="footer-content">
@@ -56,7 +90,11 @@ const renderizar = (productos)=>{
         </footer>
 
     `
-
+    const toggleCart = document.getElementById('toggleCart'); 
+    const closeCart = document.getElementById('closeCart'); 
+    const cartSidebar = document.getElementById('cartSidebar'); 
+    toggleCart.addEventListener('click', () => { cartSidebar.classList.add('active'); }); 
+    closeCart.addEventListener('click', () => { cartSidebar.classList.remove('active'); });
 }
 
-export default renderizar;
+export {renderizar,renderCart};
