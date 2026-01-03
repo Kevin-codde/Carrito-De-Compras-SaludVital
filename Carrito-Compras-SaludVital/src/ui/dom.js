@@ -3,6 +3,7 @@
  * Solo se maneja el HTML en este punto.
  */
 import productos from  '../data/productos.json';
+import { calculo_Prices } from '../logic/cart';
 import { getCart } from "../services/storage";
 
 var listado_Carrito = getCart();
@@ -12,9 +13,9 @@ var listado_Carrito = getCart();
 
 function renderCart(){
     listado_Carrito.map(pc=>{
-        uiCar += `<li>${productos[pc-1].nombre}</li>`;
+        uiCar += `<li>${productos[pc-1].nombre} <input type="checkbox" class="del-product"></input></li> `;
     })
-    return uiCar;
+   return uiCar;
 }
 const renderizar = ()=>{
    
@@ -42,11 +43,17 @@ const renderizar = ()=>{
     
     document.querySelector('#app').innerHTML = `
     <nav>
-        <img src="logoSalud.png" class="logo" ></img>
-        
-        <h4>Carrito</h4>
-        <h4>Login</h4>
+        <div class="nav-left">
+            <img src="logoSalud.png" class="logo" alt="Logo Salud">
+        </div>
+        <div class="nav-right">
+            <ul class="nav-links">
+            <li><a href="#">Carrito</a></li>
+            <li><a href="#">Login</a></li>
+            </ul>
+        </div>
     </nav>
+
     <div class="content-catalogo"> ${ui} </div>
 
     <!-- Botón para abrir/cerrar el carrito -->
@@ -59,10 +66,15 @@ const renderizar = ()=>{
     <button id="closeCart">✖</button>
   </div>
 
-  <div class="Productos-Carrito">
-    <ul>${renderCart()}</ul>
+    <div class="Productos-Carrito">
+    <ul>
+        ${renderCart()} 
+    </ul>
+         <span class ="prices">TOTAL: ${calculo_Prices(productos)}$ </span>
+          <button class="boton-Quitar">Quitar Producto(s)</button>
+
   </div>
-   <button class="boton-Quitar">Quitar Producto(s)</button>
+ 
 
 
 </div>
