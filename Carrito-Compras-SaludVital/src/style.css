@@ -127,6 +127,7 @@ body {
 }
 
 /* Navbar */
+/*
 nav {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -138,7 +139,7 @@ nav {
   align-items: center;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-
+*/
 footer {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
@@ -212,10 +213,12 @@ footer {
   padding-top: 15px;
 }
 
+/*
 .logo{
   width : 150px;
   border-radius: 20px;
 }
+*/
 
 /* Botón de abrir carrito */
 #toggleCart {
@@ -283,7 +286,13 @@ footer {
   background: #ffffff;
   padding: 5px;
   margin-bottom: 5px;
+  border: 1.5px ridge;
   border-radius: 5px;
+}
+
+.Productos-Carrito li:hover{
+  background-color: #abb7ec;
+  cursor: pointer;
 }
 
 /* Botón Quitar */
@@ -300,4 +309,64 @@ footer {
 }
 .boton-Quitar:hover {
   background: #c82333;
+}
+
+.del-product:hover{
+  cursor: pointer;
+}
+
+/* Navbar */
+nav {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  margin: 20px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.logo {
+  width: 120px;
+  border-radius: 10px;
+}
+
+/* Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links li a:hover {
+  color: #007bff;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
 }
