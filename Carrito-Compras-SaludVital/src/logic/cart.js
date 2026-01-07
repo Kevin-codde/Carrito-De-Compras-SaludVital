@@ -4,6 +4,7 @@
  */
 import * as storage from "../services/storage";
 
+
 var ls_medicamentos = [];
 var total = 0;
 
@@ -29,18 +30,29 @@ function logic_Cart (btn,lmd){
           let indice = btn.indexOf(b);
           let producto_nombre = lmd[indice].nombre;
           let producto_id = lmd[indice].id;
+          var producto_unid = lmd[indice].unidades;
+          let cant_prod_rep = ls_medicamentos.filter((pr)=>pr==producto_id).length;
+          const panel_und = document.querySelectorAll('.panel-unidades');
+          let intervalo = panel_und[indice].value;
         //  document.querySelector('.p-Cart').innerHTML = `<div></div`;
 
           if(confirm('Desea Agregar Producto')){
           //se agregan nuevos productos al carrito
-          if(!ls_medicamentos.includes(producto_id)){
+          //si es diferente prducto agreg o aun quedan unid lo agregue
+          if((!ls_medicamentos.includes(producto_id)) || cant_prod_rep < producto_unid){
+             if(intervalo > producto_unid){
+              alert(`:( no tenemos esa cantidad se agregaran las que esten disponibles`)
+              intervalo = producto_unid; 
+             }
+
+             for(let i = 1; i<=intervalo;i++){
               ls_medicamentos.push(producto_id);
+             }
+              
               storage.setCart(ls_medicamentos);
               alert(`Producto: ${producto_nombre} Agregado con exito`)
-
               setTimeout(location.reload(),2000);
 
-              //console.log('ls-medicamentos: ',ls_medicamentos)
  
             
             }else{
@@ -56,6 +68,7 @@ function logic_Cart (btn,lmd){
       }
       
   )
+
 }
 
 function delete_Products(btn,lmb){

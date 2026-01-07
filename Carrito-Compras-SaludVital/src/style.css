@@ -223,8 +223,8 @@ footer {
 /* Botón de abrir carrito */
 #toggleCart {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 50%;
+  right: 30px;
   background: #007bff;
   color: white;
   border: none;
@@ -233,6 +233,10 @@ footer {
   border-radius: 5px;
 }
 
+#toggleCart:hover{
+  transition-duration:0.3s;
+  background-color: rgb(124, 219, 124);
+}
 /* Barra lateral */
 .cart-sidebar {
   position: fixed;
@@ -315,58 +319,150 @@ footer {
   cursor: pointer;
 }
 
-/* Navbar */
-nav {
+
+/* Navbar general */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   border-radius: 15px;
   margin: 20px;
-  
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
+  padding: 15px 30px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Logo */
+/* Logo grande y protagonista */
 .logo {
-  width: 120px;
+  max-height: 80px;
+  object-fit: contain;
   border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-/* Links */
-.nav-links {
-  list-style: none;
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Enlaces del nav */
+.nav-right {
   display: flex;
   gap: 30px;
-  margin: 0;
-  padding: 0;
 }
 
-.nav-links li a {
+.nav-right a {
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-  transition: color 0.3s ease, transform 0.2s ease;
+  color: #2c3e50;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 8px 15px;
+  border-radius: 25px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.nav-links li a:hover {
-  color: #007bff;
+.nav-right a:hover {
+  background: #3498db;
+  color: white;
+}
+
+/* Sección Sobre Nosotros */
+.sobre-nosotros {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 30px;
+  margin: 40px auto;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Logo */
+.sobre-nosotros-logo img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.sobre-nosotros-logo img:hover {
   transform: scale(1.05);
+}
+
+/* Texto */
+.sobre-nosotros-texto {
+  max-width: 600px;
+}
+
+.sobre-nosotros-texto h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2980b9;
+}
+
+.sobre-nosotros-texto p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #2c3e50;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  nav {
+  .sobre-nosotros {
     flex-direction: column;
-    align-items: flex-start;
+    text-align: center;
   }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 10px;
+  .sobre-nosotros-logo img {
+    margin-bottom: 20px;
   }
 }
+
+
+
+
+
+
+
+
+
+.panel-unidades {
+  width: 80px;
+  padding: 10px;
+  border: 2px solid #3498db;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: #2c3e50;
+  background: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* Hover */
+.panel-unidades:hover {
+  border-color: #2980b9;
+  background: #ecf6ff;
+}
+
+/* Focus */
+.panel-unidades:focus {
+  border-color: #27ae60;
+  background: #eafaf1;
+  box-shadow: 0 0 10px rgba(39, 174, 96, 0.6);
+}
+
+/* Quitar flechas de los inputs number en Chrome/Edge */
+.panel-unidades::-webkit-inner-spin-button,
+.panel-unidades::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
