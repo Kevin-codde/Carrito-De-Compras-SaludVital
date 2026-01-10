@@ -8,7 +8,7 @@ function setCart(lm){
 
 function getCart(){
     let medicamentos_guardados = JSON.parse(localStorage.getItem('Medicamentos'));
-    return medicamentos_guardados;
+    return medicamentos_guardados ? medicamentos_guardados : [] ;
 
 }
 
