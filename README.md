@@ -22,4 +22,4 @@ Carrito-Compras-SaludVital/
         └── dom.js          # Manipulación del DOM y renderizado
 ```
 ## Link
-https://kevin-codde.github.io/Carrito-De-Compras-SaludVital/#catalogo
+https://kevin-codde.github.io/Carrito-De-Compras-SaludVital
