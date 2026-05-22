@@ -97,6 +97,8 @@
 
         <div class="footer-bottom">
             <p>© 2025 Droguería Salud Total. Todos los derechos reservados.</p>
+             <p>Desarrollado por: Kevin Bejarano (kevin-codde) </p>
+              <p>📞 Tel: +57 318 443 0928</p>
         </div>
         </footer>
  </section>
