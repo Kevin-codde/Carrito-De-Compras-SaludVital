@@ -127,6 +127,9 @@ const renderizar = ()=>{
 
         <div class="footer-bottom">
             <p>© 2025 Droguería Salud Total. Todos los derechos reservados.</p>
+             <p>Desarrollado por: Kevin Andres Bejarano (kevin-codde) </p>
+              <p>✉️ Email: bejaranok537@gmail.com </p>
+              <p>📞 Tel: +57 318 443 0928</p>
         </div>
         </footer>
  </section>
